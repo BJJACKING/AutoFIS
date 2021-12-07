@@ -232,7 +232,7 @@ class Trainer:
                 finished_batches += 1
                 epoch_batches += 1
 
-                epoch_batch_num = 100
+                epoch_batch_num = 10
                 if epoch_batches % epoch_batch_num == 0:
                     avg_loss /= epoch_batch_num
                     avg_l2 /= epoch_batch_num

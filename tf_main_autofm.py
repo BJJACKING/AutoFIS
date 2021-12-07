@@ -13,7 +13,7 @@ import random
 seeds = [0x0123, 0x4567, 0x3210, 0x7654, 0x89AB, 0xCDEF, 0xBA98, 0xFEDC,
              0x0123, 0x4567, 0x3210, 0x7654, 0x89AB, 0xCDEF, 0xBA98, 0xFEDC]
 data_name = 'avazu'
-dataset = as_dataset(data_name)
+dataset = as_dataset(data_name, initialized=True)
 backend = 'tf'
 batch_size = 2000
 

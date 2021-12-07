@@ -247,8 +247,10 @@ class Dataset:
                         one_piece = int(np.ceil((stop - start)/ num_workers))
                         start = start + one_piece * task_index
                         stop = start + one_piece * (task_index + 1)
-                        X_all = pd.read_hdf(hdf_in, mode='r', start=start, stop=stop).as_matrix()
-                        y_all = pd.read_hdf(hdf_out, mode='r', start=start, stop=stop).as_matrix()
+                        # X_all = pd.read_hdf(hdf_in, mode='r', start=start, stop=stop).as_matrix()
+                        # y_all = pd.read_hdf(hdf_out, mode='r', start=start, stop=stop).as_matrix()
+                        X_all = pd.read_hdf(hdf_in, mode='r', start=start, stop=stop).to_numpy()
+                        y_all = pd.read_hdf(hdf_out, mode='r', start=start, stop=stop).to_numpy()
                         yield X_all, y_all, hdf_in
             else:
                 print('in mem...')
